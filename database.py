@@ -1,4 +1,3 @@
-# database.py
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -15,10 +14,3 @@ class URL(Base):
     id = Column(Integer, primary_key=True, index=True)
     short_code = Column(String, unique=True, index=True)
     long_url = Column(String)
-    # В app.py
-from database import Base, engine
-import models
-
-# Создаёт таблицы при запуске
-Base.metadata.create_all(bind=engine)
-

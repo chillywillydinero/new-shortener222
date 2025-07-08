@@ -33,3 +33,7 @@ async def redirect_url(short_code: str):
     if long_url:
         return RedirectResponse(long_url)
     raise HTTPException(status_code=404, detail="URL not found")
+    from database import Base, engine
+
+Base.metadata.create_all(bind=engine)
+

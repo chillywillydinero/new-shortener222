@@ -21,3 +21,6 @@ async def redirect(short: str):
     if url:
         return {"redirect_to": url}
     return {"error": "URL not found"}
+@app.get("/")
+async def root():
+    return {"message": "URL shortener is alive"}

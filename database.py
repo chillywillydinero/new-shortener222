@@ -15,3 +15,10 @@ class URL(Base):
     id = Column(Integer, primary_key=True, index=True)
     short_code = Column(String, unique=True, index=True)
     long_url = Column(String)
+    # В app.py
+from database import Base, engine
+import models
+
+# Создаёт таблицы при запуске
+Base.metadata.create_all(bind=engine)
+

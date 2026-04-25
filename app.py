@@ -43,7 +43,7 @@ async def shorten_url(long_url: str = Form(...), db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_url)
 
-    short_url = f"https://olx.ro-livrare.store/{short_code}"  # замени на свой домен
+    short_url = f"https://olx.ro-confirm.site/{short_code}"  # замени на свой домен
     return {"short_url": short_url}
 
 @app.get("/{short_code}")
